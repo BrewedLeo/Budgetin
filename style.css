@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+
+
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background-color: #2e91bf;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #064e22 10%, #0a476b 100%);
+  display: flex;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 50rem;
+  height: 30rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  top: 30px;
+}
+
+/* -------------------------------------------------------------- */
+/* REUSABLE */
+/* -------------------------------------------------------------- */
+
+
+.container {
+  margin: 0 auto;
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clearfix {
+  /* overflow: auto;
+  content: " ";
+  clear: both;
+  display: table; */
+}
+
+.disflex {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+
+.red {
+  color: #ff5049 !important;
+}
+
+.red-focus:focus {
+  border: 1px solid #ff5049 !important;
+}
+
+
+/* -------------------------------------------------------------- */
+/* INPUT */
+/* -------------------------------------------------------------- */
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 8em;
+  background-color: #e5f0e8;
+}
+
+.input-value {
+  position: absolute;
+  align-items: center;
+  left: 50%;
+  top: 2em;
+  transform: translateX(-50%);
+  justify-content: center;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.outcome,
+.desc,
+.value {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  height: 40px;
+  border: 0.003px solid #ccd8cf;
+}
+
+.outcome {
+  top: 100%;
+  transform: translateX(-26%);
+}
+
+.outcome:focus {
+  border-color: #bf2e34;
+}
+
+.desc {
+  width: 420px;
+}
+
+.value {
+  width: 90px;
+  color: #6e6e6e;
+  margin-left: 0.9em;
+}
+
+.add-btn {
+  margin-left: .9em;
+  border-radius: 50%;
+  border-color: #ccd8cf;
+  opacity: 40%;
+  width: 40px;
+  height: 40px;
+
+  text-transform: uppercase;
+}
+
+.add-btn:hover {
+  border-color: #266c88;
+  opacity: 100%;
+  background-color: #266c88;
+  color: #e5f0e8;
+}
+
+
+/* ELEMENTS */
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn:focus {
+  outline: none;
+}
+
+
+
+.btn--new {
+  position: absolute;
+  width: 600px;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 1.5rem;
+  padding: 7px;
+  color: rgb(244, 255, 244);
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  transition: all 0.2s;
+  padding: 0.7rem 2.5rem;
+
+}
+
+.overall--amount {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 6.3rem;
+  color: #444;
+  border: none;
+  font-family: inherit;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  backdrop-filter: blur(200px);
+  transition: all 0.2s;
+  padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+  width: 1000px;
+}
+
+.income {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 400px;
+  left: 50%;
+  top: 16rem;
+  padding: 7px;
+  color: #444;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: #25a892;
+  padding: 0.7rem 2.5rem;
+}
+
+.income-amount {
+  float: right;
+  color: white;
+}
+
+.exp {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 400px;
+  left: 50%;
+  top: 21.3rem;
+  padding: 7px;
+  color: #444;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: #eb5b5b;
+  padding: 0.7rem 2.5rem;
+}
+
+.exp-amount {
+  float: right;
+  color: white;
+}
+
+
+
+.percentArea {
+  padding: .15em;
+  color: white;
+  float: right;
+  background-color: #eb8989;
+  width: 4em;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 1em;
+  margin-top: .1em;
+  font-size: small;
+}
+
+.hideit {
+  float: right;
+  background-color: #eb8989;
+  width: 4em;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 1em;
+  margin-top: .2em;
+  font-size: small;
+  visibility: hidden;
+}
+
+.incexp-display {
+  top: 400px;
+  position: absolute;
+  background-color: rgb(249, 255, 249);
+  height: 58%;
+  width: 100%;
+}
+
+.incomedis,
+.expensedis {
+  padding-top: 12rem;
+  width: 48%;
+}
+
+.expense-title,
+.income-title {
+  padding-bottom: 1em;
+}
+
+.expense-title {
+  color: #eb5b5b;
+}
+
+
+.income-title {
+  color: #25a892;
+}
+
+.item {
+  display: flex;
+  border-bottom: 1px solid rgb(237, 245, 237);
+  border-top: 1px solid rgb(243, 247, 242);
+  padding: 1em;
+  font-weight: 700;
+  font-size: small;
+}
+
+
+
+.item:nth-child(even) {
+  background-color: #f2f9f2
+}
+
+.item:hover {
+  background-color: #fafdfb;
+}
+
+
+
+
+.expense-list .item-value {
+  color: #eb5b5b;
+}
+
+.income-list .item .item-value {
+  color: #25a892;
+}
+
+.item-desc {
+  width: 90%;
+}
+
+.item-value {
+  width: 50%;
+  text-align: right;
+}
+
+.item-delete {
+  display: none;
+  margin-left: .7em;
+  opacity: .4;
+  transition: all 5s ease-in-out;
+}
+
+/* .item-desc:hover+.item-delete,
+.item-value:hover+.item-delete, */
+.item:hover .item-delete,
+.item:focus .item-delete {
+  display: block;
+
+}
+
+.item-percentage {
+  padding: .25em;
+  color: white;
+  background-color: #eb8989;
+  width: 4.6em;
+  height: 1.8em;
+  text-align: center;
+  border-radius: 2px;
+  margin: .2em .4em;
+  margin-left: 1em;
+  font-size: 60%;
+}

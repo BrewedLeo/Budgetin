@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Budgety App</title>
+</head>
+
+<body>
+  <main>
+    <div class="btn btn--new">Available Budget <span class="budget-month">%month%</span></div>
+    <h1 class="overall--amount">234,435,675.45</h1>
+    <div class="btn income">
+      INCOME <div class="hideit"> 45</div><span class="income-amount">+ 4,300.00 </span>
+    </div>
+    <div class="btn exp ">
+      EXPENSES 
+      <div class="percentArea"> 
+        <span class="exp-percent"> 45</span> 
+      </div>
+      <span class="exp-amount">-
+        4,300.00 
+      </span>
+
+    </div>
+
+
+  </main>
+
+
+  <div class="incexp-display container">
+    <div class="input">
+      <div class="input-value">
+        <select class="outcome">
+          <option value="inc" selected>+</option>
+          <option value="exp">-</option>
+        </select>
+        <input type="text" placeholder="Add description" class="desc" />
+        <input type="number" placeholder="Value" class="value" />
+        <button class="add-btn">Calc</i></button>
+
+        <!-- <select name="Value"  class="" placeholder="value"> 
+            <option value="pos" selected > Value </option>
+          </select>  -->
+      </div>
+    </div>
+    <div class="container">
+      <div class="incomedis">
+        <h2 class="income-title">Income</h2>
+        <div class="income-list">
+          <!-- <div class="item clearfix" id="income-0">
+            <div class="item-desc">Salary</div>
+            <div class="item-value">2,100.00</div>
+            <div class="item-delete">
+              <button class="item-del-btn">
+                <span style="color:#25a892; background: #e5f0e8; font-size:1em"> 
+                  &cross;
+                </span>
+              </button>
+            </div>
+          </div>  -->
+        </div>
+
+      </div>
+      <div class="expensedis">
+        <h2 class="expense-title">Expenses</h2>
+        <div class="expense-list">
+          <!-- <div class="item clearfix" id="expense-0">
+              <div class="item-desc">Salary</div>
+              <div class="disflex clearfix">
+                <div class="item-value">+ 2,100.00</div>
+                <div class="item-percentage">21%</div>
+                <div class="item-delete"><button class="item-del-btn"><i>&#x274C</i></button></div>
+              </div>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
