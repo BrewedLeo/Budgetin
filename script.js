@@ -1,5 +1,3 @@
-
-
 // BUDGET CONTROLLER
 var budgetController = (function () {
 
@@ -12,13 +10,13 @@ var budgetController = (function () {
 
     Expense.prototype.calcPercentage = function (totalIncome) {
         if (totalIncome > 0) {
-        this.percentage = Math.round((this.value / totalIncome) * 100);
+            this.percentage = Math.round((this.value / totalIncome) * 100);
         } else {
             this.percentage = -1;
         }
     }
 
-    Expense.prototype.getPercentage = function() {
+    Expense.prototype.getPercentage = function () {
         return this.percentage;
     }
 
@@ -160,10 +158,10 @@ var budgetController = (function () {
             data.allItems.exp.forEach(function (cur) {
                 cur.calcPercentage(data.totals.inc);
             });
-            
+
         },
 
-        getPercentages:  function () {
+        getPercentages: function () {
 
             var allPerc = data.allItems.exp.map(function (cur) {
                 return cur.getPercentage();
@@ -236,10 +234,10 @@ var UIController = (function () {
         }
         dec = numSplit[1];
 
-        return (type === 'exp' ? '-' : '+') + ' ' + int 
-        + '.' + dec;
+        return (type === 'exp' ? '-' : '+') + ' ' + int +
+            '.' + dec;
 
-        
+
     };
 
     var nodeListForEach = function (list, callback) {
@@ -323,9 +321,9 @@ var UIController = (function () {
 
             obj.budget > 0 ? type = 'inc' : type = 'exp';
 
-            document.querySelector(DOMstrings.budgetLabel).textContent = formatNumber(obj.budget, type); 
+            document.querySelector(DOMstrings.budgetLabel).textContent = formatNumber(obj.budget, type);
             document.querySelector(DOMstrings.incomeLabel).textContent = formatNumber(obj.totalInc, 'inc');
-            document.querySelector(DOMstrings.expensesLabel).textContent = formatNumber(obj.totalExp, 'exp'); 
+            document.querySelector(DOMstrings.expensesLabel).textContent = formatNumber(obj.totalExp, 'exp');
 
 
             if (obj.percentage > 0) {
@@ -348,28 +346,27 @@ var UIController = (function () {
 
             year = now.getFullYear();
 
-            document.querySelector(DOMstrings.dateLabel).textContent = months[month] + ' ' +year;
+            document.querySelector(DOMstrings.dateLabel).textContent = months[month] + ' ' + year;
 
         },
 
-            /////////////////////////////////////////////////////
-            ///////////////////////////////////////////////////////
-            ////////// Need to understand this part it's not working  //////////////
-            ///////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        ////////// Need to understand this part it's not working  //////////////
+        ///////////////////////////////////////////////////////
 
         changedType: function () {
 
-            var fields = document.querySelectorAll( DOMstrings.inputType + ',' + DOMstrings.inputDesc + ',' + DOMstrings.inputValue
-            );
+            var fields = document.querySelectorAll(DOMstrings.inputType + ',' + DOMstrings.inputDesc + ',' + DOMstrings.inputValue);
 
-            nodeListForEach(fields, function(cur) {
+            nodeListForEach(fields, function (cur) {
                 cur.classList.toggle('red-focus');
                 console.log(fields);
             });
 
             // document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
 
-            
+
         },
 
         displayPercentages: function (percentages) {
@@ -386,10 +383,10 @@ var UIController = (function () {
             ///////////////////////////////////////////////////////
             ////////// Need to understand this part  //////////////
             ///////////////////////////////////////////////////////
-            
+
 
             nodeListForEach(fields, function (current, index) {
-                
+
                 if (percentages[index] > 0) {
                     current.textContent = percentages[index] + '%';
                 } else {
